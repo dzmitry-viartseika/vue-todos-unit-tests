@@ -4,7 +4,7 @@
       <div class="v-todos-content">
         <input class="v-todos-content__input" type="text"
                v-model="task"
-               @change="addNewTask(task)"
+               @keyup.enter="addNewTask(task)"
                placeholder="What needs to be done?"
         >
         <div class="v-todos-content__list">
@@ -13,7 +13,7 @@
                :key="i"
           >
             {{ task }}
-            <span @click="removeTask(task)">
+            <span class="destroy" @click="removeTask(task)">
               x
             </span>
           </div>
